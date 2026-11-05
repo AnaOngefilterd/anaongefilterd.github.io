@@ -287,7 +287,3 @@ img { max-width: 100%; display: block; }
 }
 .follow:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
 
-/* ---------- illustratie voorpagina ---------- */
-.cover .row1 { display: flex; align-items: flex-end; justify-content: space-between; gap: 8px; }
-.cover .sint { width: min(54%, 240px); height: auto; margin: -10px -6px -4px 0; filter: drop-shadow(0 6px 0 rgba(0,0,0,.35)); }
-.cover::after { top: -40px; right: -60px; width: 260px; height: 260px; }
