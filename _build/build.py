@@ -17,8 +17,7 @@ with open(os.path.join(ROOT, "_build", "products.json")) as f:
     products = json.load(f)
 
 FOOTER = """<footer class="pagefoot">
-  <span class="handle">@anaongefilterd</span>
-  <span class="aff">Bevat affiliate links naar bol</span>
+  <a class="handle" href="https://www.instagram.com/anaongefilterd/" target="_blank" rel="noopener">@anaongefilterd</a>
 </footer>"""
 
 
@@ -69,14 +68,23 @@ page = f"""<!doctype html>
 <main class="gids">
 
 <section class="cover">
+  <div class="pepernoten" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <p class="sticker" aria-hidden="true"><span>pakjesavond</span><b>5 dec</b></p>
   <p class="kicker">@anaongefilterd</p>
   <h1><span class="big">40</span><span class="t1">Sinterklaas&shy;tips</span><span class="t2">voor <mark>0–2 jaar</mark></span></h1>
-  <p class="intro">Dit zijn mijn favoriete producten: speelgoed waar mijn kinderen echt heel veel plezier mee hebben gehad, en dingen die ik zelf het liefst cadeau zou geven. Tik op een product en je ziet het direct op bol.</p>
+  <p class="intro">Dit zijn mijn favorieten! Speelgoed waar mijn kids echt heel veel plezier mee hebben gehad, én dingen die ik zelf het liefst cadeau geef. Tik op een product en je ziet het direct op bol.</p>
   {nav}
-  <p class="disclosure"><strong>Affiliate links.</strong> Koop je via een link in deze gids, dan krijg ik een kleine commissie van bol. Jij betaalt niets extra. De producten koop je bij bol; deze gids is van mij en niet van bol.</p>
+  <p class="disclosure"><strong>Affiliate links:</strong> koop je via een link, dan krijg ik een kleine commissie van bol. Jij betaalt niets extra. Je koopt bij bol; deze gids is van mij, niet van bol.</p>
 </section>
 
 {chr(10).join(sections)}
+
+<section class="thanks">
+  <div class="pepernoten small" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <h2>Dank<span>je</span>wel!</h2>
+  <p>Fijn dat je mijn tips hebt bekeken. Veel plezier met pakjesavond, en laat me weten wat je hebt gekozen.</p>
+  <a class="follow" href="https://www.instagram.com/anaongefilterd/" target="_blank" rel="noopener">Volg @anaongefilterd</a>
+</section>
 
 </main>
 </body>
