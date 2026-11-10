@@ -22,23 +22,36 @@ BUILD_GROUPS = {"mama"}
 
 OPTIES = ["budget", "middel", "luxe"]
 
-# Naam boven de rij en korte uitleg (uit de briefing in Notion).
-MATEN = "Andere maten kies je op bol."
+# Naam boven de rij en korte uitleg (uit de briefing in Notion). Geen maatadvies of "andere maten"-tekst.
 SOORTEN = {
-    "Voedingsbh": ("Voedingsbh", MATEN),
-    "Nachthemd met knoopjes": ("Nachthemd met knoopjes", "Alleen middel en luxe: geen goede budgetoptie gevonden. " + MATEN),
-    "Netbroekjes": ("Netbroekjes", "Zit vaak al in je kraampakket. " + MATEN),
+    "Nachthemd met knoopjes": ("Nachthemd met knoopjes", "Alleen middel en luxe: geen goede budgetoptie gevonden."),
+    "Netbroekjes": ("Netbroekjes", "Zit vaak al in je kraampakket."),
     "Kraamverband": ("Kraamverband", "Zit vaak al in je kraampakket."),
     "Oplader extra lang snoer": ("Oplader met extra lang snoer",
                                  "Voor telefoons met USB-C. Luxe = Apple-adapter + Apple-kabel van 2 m, "
                                  "de langste kabel die Apple maakt."),
     "Mini doucheproducten": ("Mini doucheproducten", "Budget en middel: lege flesjes om zelf te vullen. Luxe: een gevulde set."),
-    "Dikke sokken": ("Dikke sokken", MATEN),
-    "Sloffen": ("Sloffen", MATEN),
-    "Badjas": ("Badjas", "Lange modellen, over de knie. " + MATEN),
+    "Badjas": ("Badjas", "Lange modellen, over de knie."),
     "Wikkeldeken": ("Wikkeldeken", "Voor in de autostoel of kinderwagen, niet voor in bed."),
-    "Overslagrompers 50/56": ("Overslagrompers maat 50/56", MATEN),
+    "Overslagrompers 50/56": ("Overslagrompers maat 50/56", ""),
 }
+
+# Themadetail voorpagina: klein rolkoffertje met een sticker van een flesje (akkoord Ana 10 nov).
+KOFFER = """<svg class="koffer" aria-hidden="true" viewBox="0 0 80 112" width="80" height="112">
+    <path d="M29 30V8a4 4 0 0 1 4-4h14a4 4 0 0 1 4 4v22" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <rect x="6" y="28" width="68" height="72" rx="12" fill="#ff4fa0"/>
+    <rect x="20" y="34" width="4" height="60" rx="2" fill="#111014" opacity=".18"/>
+    <rect x="56" y="34" width="4" height="60" rx="2" fill="#111014" opacity=".18"/>
+    <circle cx="23" cy="105" r="5" fill="#111014" stroke="#fff" stroke-width="2.5"/>
+    <circle cx="57" cy="105" r="5" fill="#111014" stroke="#fff" stroke-width="2.5"/>
+    <g transform="rotate(-12 42 64)">
+      <circle cx="42" cy="64" r="17" fill="#ffe03d" stroke="#111014" stroke-width="2"/>
+      <path d="M38.5 54.5c0-3 1.6-5 3.5-5s3.5 2 3.5 5z" fill="#ff4fa0" stroke="#111014" stroke-width="1.6" stroke-linejoin="round"/>
+      <rect x="36" y="54.5" width="12" height="4" rx="1.2" fill="#111014"/>
+      <rect x="36.5" y="58.5" width="11" height="17" rx="3.5" fill="#fff" stroke="#111014" stroke-width="1.6"/>
+      <path d="M41 63h4M41 67h4M41 71h4" stroke="#ff4fa0" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+  </svg>"""
 
 FOOTER = """<footer class="pagefoot">
   <a class="handle" href="https://www.instagram.com/anaongefilterd/" target="_blank" rel="noopener">@anaongefilterd</a>
@@ -131,8 +144,9 @@ def build(css_v):
 
 <section class="cover">
   <p class="sticker opties" aria-hidden="true"><span>per soort</span><b>3 opties</b></p>
+  {KOFFER}
   <p class="kicker">@anaongefilterd</p>
-  <h1><span class="t1 xl">Vlucht&shy;koffer</span><span class="t2">inpaklijst voor <mark>mama, baby &amp; partner</mark></span></h1>
+  <h1><span class="t1 xl">Vlucht&shy;koffer</span><span class="t2">inpaklijst voor</span><span class="t3"><mark>mama, baby &amp; partner</mark></span></h1>
   <p class="intro">Dit zijn mijn favorieten voor in je vluchtkoffer! Voor jou, je baby én je partner. Per ding kies je zelf: budget, middel of luxe. Tik op een foto en je ziet het direct op bol.</p>
   {nav}
   <p class="disclosure"><strong>Affiliate links:</strong> koop je via een link, dan krijg ik een kleine commissie van bol. Jij betaalt niets extra. Je koopt bij bol; deze gids is van mij, niet van bol.</p>
