@@ -6,6 +6,9 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "sinterklaas-0-2", "index.html")
 
+# Nieuwe waarde bij elke wijziging aan gids.css (anders toont de telefoon een oude versie).
+CSS_V = "1794298006"
+
 GROUPS = [
     ("0-6", "0–6", "maanden", "pink"),
     ("6-12", "6–12", "maanden", "yellow"),
@@ -61,7 +64,7 @@ page = f"""<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/gids.css?v=1793893628">
+<link rel="stylesheet" href="../assets/gids.css?v={CSS_V}">
 </head>
 <body>
 <main class="gids">
@@ -94,3 +97,7 @@ os.makedirs(os.path.dirname(OUT), exist_ok=True)
 with open(OUT, "w") as f:
     f.write(page)
 print("geschreven:", OUT, "-", len(products), "producten")
+
+# Overige gidsen
+import vluchtkoffer  # noqa: E402
+vluchtkoffer.build(CSS_V)

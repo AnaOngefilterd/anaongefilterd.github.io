@@ -287,3 +287,30 @@ img { max-width: 100%; display: block; }
 }
 .follow:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
 
+
+/* ---------- gidsen met 3 opties per soort (vluchtkoffer) ---------- */
+.cover .t1.xl { font-size: clamp(50px, 15vw, 72px); line-height: .92; }
+.sticker.opties b { font-size: 21px; }
+
+.soorten { display: flex; flex-direction: column; gap: 24px; }
+.soort { display: flex; flex-direction: column; gap: 8px; }
+.soort h3 {
+  margin: 0;
+  padding-inline: 4px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+}
+.snote { margin: -4px 0 2px; padding-inline: 4px; font-size: 12px; line-height: 1.4; color: #5b4a54; }
+
+.grid.trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.opt-budget { grid-column: 1; }
+.opt-middel { grid-column: 2; }
+.opt-luxe { grid-column: 3; }
+
+/* twee producten samen als één optie: twee halve foto's, één label */
+.duo { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+.duo-ph { width: 100%; aspect-ratio: 1 / 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+.duo-ph .card { height: 100%; min-width: 0; }
+.duo-ph .ph { aspect-ratio: auto; height: 100%; padding: 4px; border-radius: 10px; }
