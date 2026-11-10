@@ -212,15 +212,25 @@ def build(css_v):
 
 <section class="ebook" id="e-book">
   <p class="kicker">mijn e-book</p>
-  <h2>Klaar voor <span>je baby</span></h2>
-  <p>De complete vluchtkoffer-inpaklijst is één van de zes downloads bij mijn e-book. Alles wat je moet weten, regelen en kopen. Zonder bullshit, zonder roze wolk.</p>
-  <ul class="ticks">
-    <li>175 pagina's in 5 hoofdstukken: mindset, planning, besparen, jijzelf en you got this</li>
-    <li>Precies wanneer je kinderopvang, kraamzorg en verlof regelt</li>
-    <li>6 downloads, waaronder de Alles-Geregeld Checklist en de Favorietenlijst</li>
-    <li>Direct in je mailbox als pdf, met 14 dagen garantie</li>
+  <h2>Klaar voor <span>je baby!</span></h2>
+  <p>Dé must-read voor elke zwangere vrouw en nieuwe moeder in Nederland! 150+ pagina's vol eerlijke inzichten over alles wat je moet weten, regelen en kopen wanneer je een baby krijgt.</p>
+  <ul class="ticks hearts">
+    <li>Alles wat je moet weten, kopen en regelen</li>
+    <li>Hoe je de eerste 6 weken overleeft</li>
+    <li>Kiezen van kinderopvang en kraamzorg</li>
+    <li>Van vriend/vriendin naar papa en mama gaan</li>
+    <li>Moeder worden zonder jezelf te verliezen</li>
+    <li>Verlof voor jezelf en partner, óók als je zzp'er bent</li>
   </ul>
-  <p class="price"><b>€17</b><span>minder dan een romper die je baby twee weken draagt</span></p>
+  <p>En naast het e-book krijg je 6 bonussen. Ik zeg wel bonussen, maar het zijn gewoon lifesavers:</p>
+  <ul class="ticks sparks">
+    <li>Mega Checklist: precies wat je wanneer moet doen, per trimester</li>
+    <li>De favorietenlijst met meer dan 70 categorieën en 500 producten (no spon)</li>
+    <li>Wat je wel en niet vergoed krijgt van je zorgverzekering</li>
+    <li>Top 10 zorgverzekeringen voor zwangere vrouwen</li>
+    <li><strong>Vluchtkoffer inpaklijst voor mama, baby en partner</strong></li>
+    <li>Uitzetlijst per seizoen</li>
+  </ul>
   <a class="buy" href="{EBOOK_URL}" target="_blank" rel="noopener">Ja, dit wil ik!</a>
 </section>
 

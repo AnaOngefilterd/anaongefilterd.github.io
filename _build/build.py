@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "sinterklaas-0-2", "index.html")
 
 # Nieuwe waarde bij elke wijziging aan gids.css (anders toont de telefoon een oude versie).
-CSS_V = "1794299722"
+CSS_V = "1794300787"
 
 GROUPS = [
     ("0-6", "0–6", "maanden", "pink"),
