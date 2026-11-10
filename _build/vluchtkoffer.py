@@ -17,8 +17,7 @@ GROUPS = [
     ("baby", "baby", "yellow"),
     ("partner", "partner", "black"),
 ]
-# Voorbeeld voor Ana: alleen Mama bouwen. Na akkoord: alle groepen.
-BUILD_GROUPS = {"mama"}
+BUILD_GROUPS = {"mama", "baby", "partner"}
 
 OPTIES = ["budget", "middel", "luxe"]
 
@@ -35,6 +34,40 @@ SOORTEN = {
     "Wikkeldeken": ("Wikkeldeken", "Voor in de autostoel of kinderwagen, niet voor in bed."),
     "Overslagrompers 50/56": ("Overslagrompers maat 50/56", ""),
 }
+
+# Afvinklijst zonder links: Ana's eigen lijst "Vluchtkoffer Overig" uit de bonuspack (akkoord Ana 10 nov).
+AFVINKLIJST = [
+    ("Documenten", [
+        "Identiteitsbewijs (ID-kaart of paspoort), voor mama én partner",
+        "Zorgpas / verzekeringspas, voor mama én partner",
+        "Verwijsbrief van verloskundige of gynaecoloog (als je die hebt)",
+        "Overzicht medicatie / allergieën",
+        "Zwangerschapsdossier",
+        "Bloedgroepkaart (check of die in je zwangerschapsdossier zit)",
+        "Contactgegevens verloskundigenpraktijk",
+        "Contactnummer kraamzorgorganisatie",
+        "Briefje met noodnummers: huisarts, verloskundige, ziekenhuis, 24/7 spoedlijn",
+        "Uitgeprinte naam van je baby voor de registratie",
+        "Bevallingsplan (geprint + digitaal)",
+    ]),
+    ("Eten en drinken", [
+        "Kleingeld voor automaten (€25–€30)",
+        "Aquarius",
+        "Dextro Energy",
+        "Dadels",
+        "Gekoeld kokoswater",
+        "Limonade",
+        "Koekjes",
+        "Mueslirepen",
+        "Proteïnerepen",
+        "Snelle Jelle",
+        "Gesmeerde boterhammen",
+        "Keelsnoepje of iets om op te zuigen",
+        "Kauwgom",
+    ]),
+]
+
+EBOOK_URL = "https://anaongefilterd.nl/checkout/klaar-voor-je-baby-e-book"
 
 # Themadetail voorpagina: klein rolkoffertje met een sticker van een flesje (akkoord Ana 10 nov).
 KOFFER = """<svg class="koffer" aria-hidden="true" viewBox="0 0 80 112" width="80" height="112">
@@ -124,6 +157,27 @@ def build(css_v):
 </section>""")
 
     nav_links = "\n".join(f'    <a href="#{k}" class="j-{t}">{n.capitalize()}</a>' for k, n, t in GROUPS)
+    nav_links += '\n    <a href="#afvinklijst" class="j-white">Afvinklijst</a>'
+
+    checkgroups = []
+    for title, items in AFVINKLIJST:
+        lis = "\n".join(f'      <li><label><input type="checkbox"><span>{html.escape(i)}</span></label></li>' for i in items)
+        checkgroups.append(f"""  <div class="soort">
+    <h3>{html.escape(title)}</h3>
+    <ul class="checklist">
+{lis}
+    </ul>
+  </div>""")
+    afvink = f"""<section class="page group-white" id="afvinklijst">
+  <header class="ghead">
+    <h2><span class="gunit">de</span> <span class="gnum sm">afvinklijst</span></h2>
+    <p class="gcount">zonder links</p>
+  </header>
+  <div class="soorten">
+{chr(10).join(checkgroups)}
+  </div>
+  {FOOTER}
+</section>"""
     nav = f'<nav class="jump" aria-label="Kies voor wie">\n{nav_links}\n  </nav>'
 
     page = f"""<!doctype html>
@@ -153,6 +207,28 @@ def build(css_v):
 </section>
 
 {chr(10).join(sections)}
+
+{afvink}
+
+<section class="ebook" id="e-book">
+  <p class="kicker">mijn e-book</p>
+  <h2>Klaar voor <span>je baby</span></h2>
+  <p>De complete vluchtkoffer-inpaklijst is één van de zes downloads bij mijn e-book. Alles wat je moet weten, regelen en kopen. Zonder bullshit, zonder roze wolk.</p>
+  <ul class="ticks">
+    <li>175 pagina's in 5 hoofdstukken: mindset, planning, besparen, jijzelf en you got this</li>
+    <li>Precies wanneer je kinderopvang, kraamzorg en verlof regelt</li>
+    <li>6 downloads, waaronder de Alles-Geregeld Checklist en de Favorietenlijst</li>
+    <li>Direct in je mailbox als pdf, met 14 dagen garantie</li>
+  </ul>
+  <p class="price"><b>€17</b><span>minder dan een romper die je baby twee weken draagt</span></p>
+  <a class="buy" href="{EBOOK_URL}" target="_blank" rel="noopener">Ja, dit wil ik!</a>
+</section>
+
+<section class="thanks">
+  <h2>Dank<span>je</span>wel!</h2>
+  <p>Fijn dat je mijn lijst hebt bekeken. Heel veel succes de laatste weken, en laat me weten wat er in jouw vluchtkoffer gaat!</p>
+  <a class="follow" href="https://www.instagram.com/anaongefilterd/" target="_blank" rel="noopener">Volg @anaongefilterd</a>
+</section>
 
 </main>
 </body>
