@@ -213,24 +213,14 @@ def build(css_v):
 <section class="ebook" id="e-book">
   <p class="kicker">mijn e-book</p>
   <h2>Klaar voor <span>je baby!</span></h2>
-  <p>Dé must-read voor elke zwangere vrouw en nieuwe moeder in Nederland! 150+ pagina's vol eerlijke inzichten over alles wat je moet weten, regelen en kopen wanneer je een baby krijgt.</p>
-  <ul class="ticks hearts">
-    <li>Alles wat je moet weten, kopen en regelen</li>
+  <p>De complete vluchtkoffer-inpaklijst is één van de 6 bonussen bij mijn e-book. Dé must-read voor elke zwangere vrouw en nieuwe moeder: alles wat je moet weten, regelen en kopen. Eerlijk en ongefilterd.</p>
+  <ul class="ticks">
+    <li>150+ pagina's: van kraamzorg, verzekeringen en verlof tot je relatie, momrage en hoe het écht is om moeder te zijn</li>
     <li>Hoe je de eerste 6 weken overleeft</li>
-    <li>Kiezen van kinderopvang en kraamzorg</li>
-    <li>Van vriend/vriendin naar papa en mama gaan</li>
-    <li>Moeder worden zonder jezelf te verliezen</li>
-    <li>Verlof voor jezelf en partner, óók als je zzp'er bent</li>
+    <li>Verlof voor jezelf en je partner, óók als je zzp'er bent</li>
+    <li>6 bonussen, waaronder de Mega Checklist per trimester, de favorietenlijst met 500 producten (no spon) en <strong>de vluchtkoffer-inpaklijst</strong></li>
   </ul>
-  <p>En naast het e-book krijg je 6 bonussen. Ik zeg wel bonussen, maar het zijn gewoon lifesavers:</p>
-  <ul class="ticks sparks">
-    <li>Mega Checklist: precies wat je wanneer moet doen, per trimester</li>
-    <li>De favorietenlijst met meer dan 70 categorieën en 500 producten (no spon)</li>
-    <li>Wat je wel en niet vergoed krijgt van je zorgverzekering</li>
-    <li>Top 10 zorgverzekeringen voor zwangere vrouwen</li>
-    <li><strong>Vluchtkoffer inpaklijst voor mama, baby en partner</strong></li>
-    <li>Uitzetlijst per seizoen</li>
-  </ul>
+  <p class="price"><b>€19</b><span>minder dan een romper die je baby twee weken draagt</span></p>
   <a class="buy" href="{EBOOK_URL}" target="_blank" rel="noopener">Ja, dit wil ik!</a>
 </section>
 
