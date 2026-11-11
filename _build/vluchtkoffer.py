@@ -1,7 +1,7 @@
 """Bouwt vluchtkoffer/index.html uit vluchtkoffer.json. Wordt aangeroepen door build.py.
 
 Opzet (anders dan de Sint-gids): groepen Mama/Baby/Partner, per soort één rij met
-3 fotokaartjes (budget, middel, luxe). Op het kaartje alleen de foto en het label.
+3 fotokaartjes (budget, middel, luxe). Op het kaartje de foto, het merk en het label.
 """
 import html
 import json
@@ -109,7 +109,9 @@ def photo_link(p, optie, extra=""):
 
 
 def slot(items, optie, tone):
-    label = f'<span class="age age-{tone}">{optie}</span>'
+    # Onder de foto het merk (akkoord Ana 11 nov, variant A); geen merk bij bol = "Huismerk".
+    merk = html.escape(items[0].get("merk") or "Huismerk")
+    label = f'<span class="brand">{merk}</span>\n  <span class="age age-{tone}">{optie}</span>'
     if len(items) == 1:
         return f'<li class="opt-{optie}">{photo_link(items[0], optie)}\n  {label}\n</a></li>'
     # twee producten samen als één optie (bijv. adapter + kabel): twee foto-links, één label
