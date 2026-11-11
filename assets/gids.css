@@ -377,18 +377,23 @@ img { max-width: 100%; display: block; }
 }
 .buy:focus-visible { outline: 3px solid var(--pink); outline-offset: 2px; }
 
-/* merk onder de foto (vluchtkoffergids) */
+/* merk onder de foto (vluchtkoffergids): altijd één regel, alle merken even groot.
+   De lettergrootte volgt de breedte van het kaartje, zodat ook "Het Bevallingsjurkje" past. */
+.trio > li { container-type: inline-size; }
 .brand {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   line-height: 1.15;
   color: var(--black);
   text-align: center;
   max-width: 100%;
-  overflow-wrap: anywhere;
-  text-wrap: balance;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin-bottom: -2px;
 }
-/* labels in een rij op één hoogte, ook als een merknaam twee regels heeft */
+@supports (font-size: 1cqw) {
+  .brand { font-size: min(12px, 9.5cqw); }
+}
 .trio > li > .card { height: 100%; }
 .trio .age { margin-top: auto; }
