@@ -185,7 +185,6 @@ def build(css_v):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex">
 <title>Vluchtkoffer: inpaklijst voor mama, baby en partner · @anaongefilterd</title>
 <meta name="description" content="Mijn inpaklijst voor de vluchtkoffer, met per ding een budget-, middel- en luxe-optie. Tik op een product om het op bol te bekijken.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
