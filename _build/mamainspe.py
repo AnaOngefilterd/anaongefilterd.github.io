@@ -12,6 +12,7 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+EBOOK_URL = "https://anaongefilterd.nl/checkout/klaar-voor-je-baby-e-book"  # zelfde salespage als bij de vluchtkoffer
 OUT = os.path.join(ROOT, "mama-in-spe", "index.html")
 
 # (sleutel, klein woord, groot woord, kleur binnen het palet, knop op de voorpagina)
@@ -143,6 +144,20 @@ def build(css_v):
   <h2>Dank<span>je</span>wel!</h2>
   <p>Fijn dat je mijn lijst hebt bekeken. Stuur hem gerust door naar wie jou iets wil geven, en fijne feestdagen!</p>
   <a class="follow" href="https://www.instagram.com/anaongefilterd/" target="_blank" rel="noopener">Volg @anaongefilterd</a>
+</section>
+
+<section class="ebook" id="e-book">
+  <p class="kicker">het beste cadeautje dat je jezelf kan geven</p>
+  <h2>Klaar voor <span>je baby!</span></h2>
+  <p>Mijn e-book <em>Klaar voor je baby!</em> is het beste cadeautje dat je jezelf kan geven. Dé must-read voor elke zwangere vrouw en moeder: alles wat je moet weten, regelen en kopen. Eerlijk en ongefilterd.</p>
+  <ul class="ticks">
+    <li>175 pagina's: van kraamzorg, verzekeringen en verlof tot je relatie, momrage en hoe het écht is om moeder te zijn</li>
+    <li>Hoe je de eerste 6 weken overleeft</li>
+    <li>Verlof voor jezelf en je partner, óók als je zzp'er bent</li>
+    <li>6 bonussen: de Mega Checklist per trimester, de favorietenlijst met 500 producten, de uitzetlijst per seizoen, wat je wel en niet vergoed krijgt van je zorgverzekering, de top 10 zorgverzekeringen voor zwangere vrouwen en de vluchtkoffer-inpaklijst</li>
+  </ul>
+  <p class="price"><b>€19</b><span>minder dan een romper die je baby twee weken draagt</span></p>
+  <a class="buy" href="{EBOOK_URL}" target="_blank" rel="noopener">Ja, dit wil ik!</a>
 </section>
 
 </main>
