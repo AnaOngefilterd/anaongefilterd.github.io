@@ -2,8 +2,9 @@
 
 Opzet zoals de vluchtkoffer (akkoord Ana 16 nov): per soort een rij kaartjes (budget, middel,
 luxe), met foto, merk en label. Nieuw: een paar gewone links naar andere winkels (veld
-'extern'); die krijgen een tekstkaartje zonder foto (foto's van andere winkels laden we niet)
-en geen rel="sponsored", want daar is geen affiliate link.
+'extern'); geen rel="sponsored", want daar is geen affiliate link. Foto: live van de site van
+de winkel (veld 'img', akkoord Ana 16 nov: weghalen als een winkel klaagt); zolang die er niet
+is, een tekstkaartje.
 """
 import html
 import json
@@ -53,15 +54,16 @@ def card(p, tone):
     merk = html.escape(p.get("merk") or "Huismerk")
     label = f'<span class="brand">{merk}</span>\n  <span class="age age-{tone_for(p["optie"], tone)}">{optie}</span>'
     cls = f"opt-{p['optie']}" if p["optie"] in OPTIE_VOLGORDE else "opt-extra"
-    if p.get("extern"):
+    if p.get("extern") and not p.get("img"):
         return (f'<li class="{cls}"><a class="card" href="{html.escape(p["link"])}" target="_blank" rel="noopener" '
                 f'aria-label="{name}, {optie}, bekijk bij {merk}">\n'
                 f'  <span class="ph tekst"><span>{name}</span><i aria-hidden="true">↗</i></span>\n  {label}\n</a></li>')
     # Foto altijd live van media.s-bol.com (bol-voorwaarden art. 3.2).
     img = (f'<img src="{html.escape(p["img"])}" alt="{name}" loading="lazy" referrerpolicy="no-referrer">'
            if p["img"] else "")
-    return (f'<li class="{cls}"><a class="card" href="{html.escape(p["link"])}" target="_blank" rel="sponsored noopener" '
-            f'aria-label="{name}, {optie}, bekijk op bol">\n'
+    rel, waar = ("noopener", f"bij {merk}") if p.get("extern") else ("sponsored noopener", "op bol")
+    return (f'<li class="{cls}"><a class="card" href="{html.escape(p["link"])}" target="_blank" rel="{rel}" '
+            f'aria-label="{name}, {optie}, bekijk {waar}">\n'
             f'  <span class="ph">{img}</span>\n  {label}\n</a></li>')
 
 
@@ -132,7 +134,7 @@ def build(css_v):
   <h1><span class="t1 xl">Verlang-<br>lijst</span><span class="t2">voor</span><span class="t3"><mark>mama's in spé</mark></span></h1>
   <p class="intro">Dit zijn mijn favorieten voor op je verlanglijstje! Dingen die je als mama in spé écht gebruikt: nu, bij de bevalling én straks met je baby. Per ding kies je zelf: budget, middel of luxe. Tik op een kaartje en je ziet het direct in de winkel.</p>
   {nav}
-  <p class="disclosure"><strong>Affiliate links:</strong> koop je via een link, dan krijg ik een kleine commissie van bol. Jij betaalt niets extra. Je koopt bij bol; deze gids is van mij, niet van bol. Kaartjes zonder foto zijn gewone links naar andere winkels; daar verdien ik niets aan.</p>
+  <p class="disclosure"><strong>Affiliate links:</strong> koop je via een link, dan krijg ik (soms) een kleine commissie. Jij betaalt niets extra!</p>
 </section>
 
 {chr(10).join(sections)}
