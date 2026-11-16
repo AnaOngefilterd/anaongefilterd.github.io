@@ -53,7 +53,8 @@ def card(p, tone):
     name = html.escape(clean_name(p["name"]))
     optie = html.escape(p["optie"])
     merk = html.escape(p.get("merk") or "Huismerk")
-    label = f'<span class="brand">{merk}</span>\n  <span class="age age-{tone_for(p["optie"], tone)}">{optie}</span>'
+    soort = f'\n  <span class="type">{html.escape(p["type"])}</span>' if p.get("type") else ""
+    label = f'<span class="brand">{merk}</span>{soort}\n  <span class="age age-{tone_for(p["optie"], tone)}">{optie}</span>'
     cls = f"opt-{p['optie']}" if p["optie"] in OPTIE_VOLGORDE else "opt-extra"
     if p.get("extern") and not p.get("img"):
         return (f'<li class="{cls}"><a class="card" href="{html.escape(p["link"])}" target="_blank" rel="noopener" '
