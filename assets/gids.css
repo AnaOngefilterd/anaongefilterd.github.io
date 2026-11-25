@@ -423,3 +423,64 @@ img { max-width: 100%; display: block; }
 /* type onder het merk (bijv. Baby Brezza / Formula Pro), zodat je het verschil ziet */
 .type { font-size: 10px; line-height: 1.15; color: #5b4a54; text-align: center; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: -4px; }
 @supports (font-size: 1cqw) { .type { font-size: min(11px, 9cqw); } }
+
+/* Kerst (papa-gids, op verzoek van Ana 25 nov): sneeuwvlokken, kerstboom en cadeautje, alleen CSS */
+.sneeuw, .kerstboom { position: absolute !important; pointer-events: none; }
+.sneeuw { inset: 0; z-index: 0 !important; }
+.sneeuw i {
+  position: absolute; width: 18px; height: 18px; opacity: .8;
+  background: linear-gradient(90deg, transparent 8px, var(--white) 8px 10px, transparent 10px);
+}
+.sneeuw i::before, .sneeuw i::after {
+  content: ""; position: absolute; left: 8px; top: 0; width: 2px; height: 18px;
+  border-radius: 2px; background: var(--white);
+}
+.sneeuw i::before { transform: rotate(60deg); }
+.sneeuw i::after { transform: rotate(-60deg); }
+.sneeuw i:nth-child(1) { top: 14px; left: 46%; }
+.sneeuw i:nth-child(2) { top: 18px; left: 22%; transform: scale(.6); opacity: .55; }
+.sneeuw i:nth-child(3) { top: 458px; right: 16%; transform: scale(.8); }
+.sneeuw i:nth-child(4) { bottom: 34px; right: 7%; }
+.sneeuw i:nth-child(5) { bottom: 96px; right: 15%; transform: scale(.6); opacity: .55; }
+.sneeuw i:nth-child(6) { bottom: 12px; left: 40%; transform: scale(.5); opacity: .5; }
+.sneeuw.small i:nth-child(1) { top: 22px; right: 10%; left: auto; }
+.sneeuw.small i:nth-child(2) { top: 64px; right: 4%; left: auto; transform: scale(.6); }
+.sneeuw.small i:nth-child(3) { top: auto; bottom: 58px; right: 26%; transform: scale(.8); }
+.sneeuw.small i:nth-child(4) { bottom: 22px; right: 9%; }
+.sneeuw.small i:nth-child(5) { bottom: 18px; left: 8%; right: auto; transform: scale(.55); }
+
+.kerstboom {
+  z-index: 1 !important;
+  top: 146px; right: max(22px, env(safe-area-inset-right, 0px));
+  width: 92px; height: 112px; transform: scale(.88); transform-origin: top right;
+}
+.kerstboom .ster {
+  position: absolute; left: 36px; top: 0; width: 20px; height: 20px; background: var(--yellow);
+  clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.kerstboom .boom {
+  position: absolute; left: 6px; top: 14px; width: 80px; height: 78px;
+  background:
+    radial-gradient(circle at 38% 40%, var(--yellow) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 60% 58%, var(--white) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 30% 76%, var(--white) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 70% 82%, var(--yellow) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 52% 26%, var(--white) 0 2px, transparent 3px),
+    var(--pink);
+  clip-path: polygon(50% 0, 72% 30%, 62% 30%, 84% 62%, 72% 62%, 100% 100%, 0 100%, 28% 62%, 16% 62%, 38% 30%, 28% 30%);
+}
+.kerstboom .stam { position: absolute; left: 40px; top: 92px; width: 12px; height: 14px; background: var(--white); border-radius: 2px; }
+.kerstboom .pakje {
+  position: absolute; right: -4px; bottom: 0; width: 30px; height: 24px; border-radius: 3px;
+  background:
+    linear-gradient(90deg, transparent 12px, var(--pink) 12px 18px, transparent 18px),
+    linear-gradient(transparent 9px, var(--pink) 9px 14px, transparent 14px),
+    var(--yellow);
+}
+.kerstboom .pakje::before, .kerstboom .pakje::after {
+  content: ""; position: absolute; top: -9px; width: 11px; height: 10px;
+  border: 3px solid var(--pink); border-radius: 50% 50% 10% 50%;
+}
+.kerstboom .pakje::before { left: 3px; transform: rotate(-20deg); }
+.kerstboom .pakje::after { right: 3px; transform: scaleX(-1) rotate(-20deg); }
+.cover.kerst .intro { padding-right: 0; }

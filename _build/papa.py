@@ -136,7 +136,9 @@ def build(css_v):
 <body>
 <main class="gids">
 
-<section class="cover">
+<section class="cover kerst">
+  <div class="sneeuw" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="kerstboom" aria-hidden="true"><span class="ster"></span><span class="boom"></span><span class="stam"></span><span class="pakje"></span></div>
   <p class="sticker sintkerst" aria-hidden="true"><span>voor</span><b>kerst</b></p>
   <p class="kicker">@anaongefilterd</p>
   <h1><span class="t1 xl">Cadeaus</span><span class="t2">voor een</span><span class="t3"><mark>papa to be</mark></span></h1>
@@ -148,6 +150,7 @@ def build(css_v):
 {chr(10).join(sections)}
 
 <section class="thanks">
+  <div class="sneeuw small" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
   <h2>Dank<span>je</span>wel!</h2>
   <p>Fijn dat je mijn lijst hebt bekeken. Stuur hem gerust door naar wie een cadeau zoekt voor de papa, en fijne feestdagen!</p>
   <a class="follow" href="https://www.instagram.com/anaongefilterd/" target="_blank" rel="noopener">Volg @anaongefilterd</a>
