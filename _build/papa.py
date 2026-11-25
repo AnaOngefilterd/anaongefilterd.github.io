@@ -65,7 +65,9 @@ def card(p, tone):
                 f'aria-label="{name}, {optie}, bekijk bij {merk}">\n'
                 f'  <span class="ph tekst"><span>{name}</span><i aria-hidden="true">↗</i></span>\n  {label}\n</a></li>')
     # Foto altijd live van media.s-bol.com (bol-voorwaarden art. 3.2).
-    img = (f'<img src="{html.escape(p["img"])}" alt="{name}" loading="lazy" referrerpolicy="no-referrer">'
+    # Laadt een foto van een andere winkel niet, dan blijft de naam als tekstkaartje staan.
+    fallback = (' onerror="this.parentNode.classList.add(\'tekst\');this.outerHTML=this.alt"' if p.get("extern") else "")
+    img = (f'<img src="{html.escape(p["img"])}" alt="{name}" loading="lazy" referrerpolicy="no-referrer"{fallback}>'
            if p["img"] else "")
     rel, waar = ("noopener", f"bij {merk}") if p.get("extern") else ("sponsored noopener", "op bol")
     return (f'<li class="{cls}"><a class="card" href="{html.escape(p["link"])}" target="_blank" rel="{rel}" '
