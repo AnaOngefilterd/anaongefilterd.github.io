@@ -126,7 +126,6 @@ def build(css_v):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kerstcadeaus voor een (aanstaande) papa · @anaongefilterd</title>
-<meta name="robots" content="noindex">
 <meta name="description" content="Coole, niche kerstcadeaus voor een (aanstaande) papa. Per ding een budget-, middel- en luxe-optie, plus belevenissen.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
